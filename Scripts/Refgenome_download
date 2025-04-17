@@ -11,3 +11,16 @@ wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/036/323/735/GCF_036323735.1_GR
         }
     }
 }' GCF_036323735.1_GRCr8_genomic_chr.gtf >tab_edited.gtf
+
+
+
+####homer add custome genome ###
+cd /workspace/rsrch2/panpanliu/Softwares/Homer
+perl ./bin/loadGenome.pl -name rat8 -fasta /workspace/rsrch2/common_data/Refgenome/ratGRCr8/GCF_036323735.1_GRCr8_genomic_chr.fna.fasta -gtf /workspace/rsrch2/common_data/Refgenome/ratGRCr8/GCF_036323735.1_GRCr8_genomic_chr.gtf -org null -force -keepAll
+
+
+
+##### 
+
+cd /workspace/rsrch2/panpanliu/project/RNA-seq/Collaborater_jobs/ZhangCGC_RNAseq/4_homer/tagDirectory
+perl /workspace/rsrch2/panpanliu/Softwares/Homer/bin/analyzeRepeats.pl rna rat8 -condenseGenes -count exons -d S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15 S16 S17 S18 S19 S20 S21 S22 S23 S24 S25 S26 S27 S28 S29 S30 S31 S32 S33 S34 S35 S36 S37 S38 S39 S40 S41 S42 S43 S44 -noadj > Gene_quntify_raw.txt
